@@ -1,3 +1,5 @@
+// capitulo 3 DOM
+
 // Modificación del contenido HTML de la lista
 // document.getElementById("lenguajes").innerHTML += '<li id="c">C</li>';
 
@@ -52,3 +54,28 @@ document.getElementById('lenguajes').insertAdjacentElement("afterBegin",
 
 // // Supresión del elemento identificado por "swift"
 // document.getElementById("lenguajes").removeChild(document.getElementById("swift"));
+
+
+// video
+
+// var lenguajes = document.getElementById("lenguajes");
+
+// var javaElt = document.createElement("li");
+
+// javaElt.setAttribute("class", "nombre-clase");
+
+// javaElt.id = "java"; // javaElt.className = "nombre-clase"
+
+// javaElt.classList.add("nombre-clase2");
+
+// javaElt.textContent = "Java";
+
+// lenguajes.appendChild(javaElt);
+
+// lenguajes.insertBefore(javaElt, document.getElementById("python"));
+
+// lenguajes.insertAdjacentElement("afterBegin", javaElt);
+
+// lenguajes.replaceChild(javaElt, document.getElementById("python"));
+
+// lenguajes.removeChild(document.getElementById("php"));
