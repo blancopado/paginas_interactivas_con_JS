@@ -41,9 +41,9 @@ ajaxGet("http://localhost:3000/imagenes", function(respuesta) {
   // Transformación de formato JSON a JavaScript
   var imagenes = JSON.parse(respuesta);
 
-  imagenes.forEach(function(e, index) {
+  imagenes.forEach(function(elemento) {
     var imgElt = document.createElement("img");
-    imgElt.src = imagenes[index].thumbnailUrl;
+    imgElt.src = elemento.thumbnailUrl;
     document.getElementById("imagenes").appendChild(imgElt);
   });
 });

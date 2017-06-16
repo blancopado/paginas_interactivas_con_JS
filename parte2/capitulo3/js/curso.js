@@ -1,7 +1,8 @@
+// Validación durante la entrada de datos y Expresiones Regulares
+
 var clave = document.getElementById("clave");
 
 clave.addEventListener("input", function(e) {
-
   var palabraClave = e.target.value;
   var ayudaClave = document.getElementById("ayudaClave");
   ayudaClave.textContent = "Débil";
@@ -17,26 +18,14 @@ clave.addEventListener("input", function(e) {
 
 });
 
-// // Control del correo al final de la entrada de datos (blur -> pérdida de focus)
-// document.getElementById("email").addEventListener("blur", function(e) {
-//   var mensajeEmail = "";
-//   if (e.target.value.indexOf("@") < 0) {
-//     mensajeEmail = "Debes añadir un símbolo @";
-//   }
-//   document.getElementById("ayudaEmail").textContent = mensajeEmail;
-// });
-
-var regex = /@/; // La cadena debe contener el caracter @
-console.log(regex.test("nombre&email.com")); // Muestra false
-console.log(regex.test("nombre@email.com")); // Muestra true
-
-// Control del correo al final de la entrada de datos (blur -> pérdida de focus)
-document.getElementById("email").addEventListener("blur", function(e) {
-  // Corresponde a una cadena con la forma xxx@yyy.zzz
+document.getElementById("email").addEventListener("blur", function(e){
+  var email = e.target.value;
+  var ayudaEmail = "";
   var regexEmail = /.+@.+\..+/;
-  var mensajeEmail = "";
-  if (!regexEmail.test(e.target.value)) {
-    mensajeEmail = "Correo no válido";
+
+  if (!regexEmail.test(email)) {
+    ayudaEmail = "Debes añadir un símbolo @";
   }
-  document.getElementById("ayudaEmail").textContent = mensajeEmail;
+
+  document.getElementById("ayudaEmail").textContent = ayudaEmail;
 });
